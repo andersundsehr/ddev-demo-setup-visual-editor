@@ -1,7 +1,7 @@
 base: 'https://ddev-demo-setup-visual-editor.ddev.site'
 baseVariants:
   -
-    base: 'https://ddev-demo-setup-visual-editor.ddev.site:33001'
+    base: '%env("DDEV_PRIMARY_URL")%'
     condition: 'getenv("DDEV_PRIMARY_URL") != ""'
 dependencies:
   - typo3/theme-camino
