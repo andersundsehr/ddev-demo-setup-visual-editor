@@ -9,12 +9,13 @@
             "typo3/cms-composer-installers": true
         },
         "platform": {
-            "php": "8.2.0"
+            "php": "8.5.0"
         },
         "sort-packages": true
     },
     "require": {
-        "friendsoftypo3/visual-editor": "^1.0.6",
+        "php": "~8.5.0",
+        "friendsoftypo3/visual-editor": "^1.1.3",
         "typo3/cms-backend": "14.3.x-dev",
         "typo3/cms-belog": "14.3.x-dev",
         "typo3/cms-beuser": "14.3.x-dev",
