@@ -10,10 +10,9 @@
 
 1. Clone the repository
 2. Run `ddev start`
-3. Run `ddev composer install`
-4. Run `ddev import-db --file=dump.sql.gz`
-5. Run `ddev launch /typo3/module/web/edit` user: `admin` password: `Demo123*`
-6. If you want to update the `EXT:visual_editor` run this: `ddev composer u friendsoftypo3/visual-editor`
+3. Run `ddev setup
+4. Run `ddev launch /typo3/module/web/edit`
+5. If you want to update the `EXT:visual_editor` run this: `ddev composer u friendsoftypo3/visual-editor`
 
 
 You should see this:

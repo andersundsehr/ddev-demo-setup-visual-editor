@@ -11,17 +11,8 @@ return [
     'DB' => [
         'Connections' => [
             'Default' => [
-                'charset' => 'utf8mb4',
-                'dbname' => 'db',
-                'defaultTableOptions' => [
-                    'charset' => 'utf8mb4',
-                    'collation' => 'utf8mb4_unicode_ci',
-                ],
-                'driver' => 'mysqli',
-                'host' => 'db',
-                'password' => 'db',
-                'port' => 3306,
-                'user' => 'db',
+                'driver' => 'pdo_sqlite',
+                'path' => dirname(__DIR__, 2) . '/var/sqlite/demo.sqlite',
             ],
         ],
     ],
@@ -69,12 +60,8 @@ return [
         ],
     ],
     'MAIL' => [
-        'transport' => 'sendmail',
-        'transport_sendmail_command' => '/usr/local/bin/mailpit sendmail -t --smtp-addr 127.0.0.1:1025',
-        'transport_smtp_encrypt' => '',
-        'transport_smtp_password' => '',
-        'transport_smtp_server' => '',
-        'transport_smtp_username' => '',
+        'transport' => 'mbox',
+        'transport_mbox_file' => dirname(__DIR__, 2) . '/var/log/typo3-mails.mbox',
     ],
     'SYS' => [
         'UTF8filesystem' => true,
