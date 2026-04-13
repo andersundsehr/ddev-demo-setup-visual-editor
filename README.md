@@ -54,6 +54,14 @@ docker run --rm -p 8080:80 \
   ghcr.io/andersundsehr/ddev-demo-setup-visual-editor:latest
 ```
 
+Allow TYPO3 to trust forwarded host and HTTPS headers from any proxy:
+
+```bash
+docker run --rm -p 8080:80 \
+  -e TYPO3_TRUST_ANY_PROXY=1 \
+  ghcr.io/andersundsehr/ddev-demo-setup-visual-editor:latest
+```
+
 Disable scheduled resets entirely:
 
 ```bash
@@ -77,6 +85,7 @@ services:
     ports:
       - "8080:80"
     environment:
+      TYPO3_TRUST_ANY_PROXY: "0"
       RESET_DEMO_CRON_SCHEDULE: "0 * * * *"
 ```
 
@@ -120,6 +129,7 @@ If you started the container with `docker run`, stop it with `Ctrl+C` or by remo
   ```
 
 - The scheduled reset timing is controlled by `RESET_DEMO_CRON_SCHEDULE` and defaults to `0 * * * *`.
+- Set `TYPO3_TRUST_ANY_PROXY=1` if the demo runs behind a proxy whose forwarded host and HTTPS headers should be trusted by TYPO3.
 
 ## Reset Semantics
 

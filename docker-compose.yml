@@ -4,6 +4,7 @@ services:
       context: .
       dockerfile: Dockerfile
     environment:
+      TYPO3_TRUST_ANY_PROXY: "0"
       RESET_DEMO_CRON_SCHEDULE: "0 * * * *"
     ports:
       - "8080:80"
