@@ -3,10 +3,13 @@ set -euo pipefail
 
 cd /var/www/html
 
+mkdir -p public var/sqlite
+
+composer install
+
 rsync -a seed/demo.sqlite var/sqlite/demo.sqlite
 rsync -a --delete seed/fileadmin public/
 
-composer install
 vendor/bin/typo3 extension:setup -n
 vendor/bin/typo3 referenceindex:update
 vendor/bin/typo3 cache:flush
