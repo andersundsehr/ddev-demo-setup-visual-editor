@@ -25,13 +25,11 @@ Use this workflow if you want to work on the project locally with DDEV.
 
 ### How to set up the demo
 
-1. Clone the repository.
-2. Run `ddev start`.
-3. Run `ddev composer install`.
-4. Run `ddev import-db --file=dump.sql.gz`.
-5. Run `ddev launch /typo3/module/web/edit`.
-6. Log in with user `admin` and password `Demo123*`.
-7. If you want to update `EXT:visual_editor`, run `ddev composer u friendsoftypo3/visual-editor`.
+1. Clone the repository
+2. Run `ddev start`
+3. Run `ddev setup`
+4. Run `ddev launch /typo3/module/web/edit`
+5. If you want to update the `EXT:visual_editor` run this: `ddev composer u friendsoftypo3/visual-editor`
 
 ## Standalone Docker Setup
 
