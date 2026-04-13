@@ -6,14 +6,19 @@ ENV TYPO3_CONTEXT=Development \
     TYPO3_PATH_APP=/app \
     TYPO3_PATH_ROOT=/app/public \
     TYPO3_TRUST_ANY_PROXY=0 \
-    RESET_DEMO_CRON_SCHEDULE="0 * * * *"
+    RESET_DEMO_CRON_SCHEDULE="0 * * * *" \
+    COMPOSER_ALLOW_SUPERUSER=1
 
 WORKDIR /app
 
 RUN docker-service enable cron \
     && apt-get update \
-    && apt-get install -y --no-install-recommends graphicsmagick imagemagick rsync sqlite3 gzip util-linux \
+    && apt-get install -y --no-install-recommends graphicsmagick imagemagick rsync sqlite3 gzip util-linux unzip \
     && rm -rf /var/lib/apt/lists/*
+
+COPY composer.json composer.lock /app/
+
+RUN composer install --no-interaction --prefer-dist
 
 COPY . /app
 COPY docker/apache/10-typo3.conf /opt/docker/etc/httpd/vhost.common.d/10-typo3.conf
