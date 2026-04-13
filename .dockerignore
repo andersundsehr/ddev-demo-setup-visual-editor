@@ -1,0 +1,8 @@
+.codex
+.ddev
+.git
+.idea
+var/
+public/fileadmin/
+public/typo3temp/
+screenshot.png

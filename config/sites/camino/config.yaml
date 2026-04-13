@@ -1,0 +1,16 @@
+base: /camino/
+dependencies:
+  - typo3/theme-camino
+languages:
+  -
+    title: English
+    enabled: true
+    locale: en-US
+    hreflang: en-US
+    base: /en/
+    websiteTitle: Camino
+    navigationTitle: English
+    flag: global
+    languageId: 0
+rootPageId: 5
+websiteTitle: Camino

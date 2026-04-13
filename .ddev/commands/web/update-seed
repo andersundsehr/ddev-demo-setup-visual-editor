@@ -1,0 +1,11 @@
+#!/bin/bash
+set -euo pipefail
+
+cd /var/www/html
+
+rsync -a var/sqlite/demo.sqlite seed/demo.sqlite
+rsync -a --delete --exclude=_temp_ --exclude=_processed_ public/fileadmin seed/
+
+printf '\n\033[1;36m========================================\033[0m\n'
+printf '\033[1;32m✅ Seed files updated\033[0m\n'
+printf '\033[1;36m========================================\033[0m\n\n'

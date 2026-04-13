@@ -9,35 +9,40 @@
             "typo3/cms-composer-installers": true
         },
         "platform": {
-            "php": "8.2.0"
+            "php": "8.5.0"
         },
         "sort-packages": true
     },
     "require": {
-        "friendsoftypo3/visual-editor": "^1.0.6",
-        "typo3/cms-backend": "14.2.x-dev",
-        "typo3/cms-belog": "14.2.x-dev",
-        "typo3/cms-beuser": "14.2.x-dev",
-        "typo3/cms-core": "14.2.x-dev",
-        "typo3/cms-dashboard": "14.2.x-dev",
-        "typo3/cms-extbase": "14.2.x-dev",
-        "typo3/cms-felogin": "14.2.x-dev",
-        "typo3/cms-filelist": "14.2.x-dev",
-        "typo3/cms-fluid": "14.2.x-dev",
-        "typo3/cms-form": "14.2.x-dev",
-        "typo3/cms-frontend": "14.2.x-dev",
-        "typo3/cms-impexp": "14.2.x-dev",
-        "typo3/cms-info": "14.2.x-dev",
-        "typo3/cms-install": "14.2.x-dev",
-        "typo3/cms-reactions": "14.2.x-dev",
-        "typo3/cms-recycler": "14.2.x-dev",
-        "typo3/cms-rte-ckeditor": "14.2.x-dev",
-        "typo3/cms-seo": "14.2.x-dev",
-        "typo3/cms-setup": "14.2.x-dev",
-        "typo3/cms-sys-note": "14.2.x-dev",
-        "typo3/cms-tstemplate": "14.2.x-dev",
-        "typo3/cms-viewpage": "14.2.x-dev",
-        "typo3/cms-webhooks": "14.2.x-dev",
-        "typo3/theme-camino": "14.2.x-dev"
+        "php": "~8.5.0",
+        "friendsoftypo3/visual-editor": "^1.1.3",
+        "typo3/cms-backend": "14.3.x-dev",
+        "typo3/cms-belog": "14.3.x-dev",
+        "typo3/cms-beuser": "14.3.x-dev",
+        "typo3/cms-core": "14.3.x-dev",
+        "typo3/cms-dashboard": "14.3.x-dev",
+        "typo3/cms-extbase": "14.3.x-dev",
+        "typo3/cms-workspaces": "14.3.x-dev",
+        "typo3/cms-felogin": "14.3.x-dev",
+        "typo3/cms-filelist": "14.3.x-dev",
+        "typo3/cms-fluid": "14.3.x-dev",
+        "typo3/cms-form": "14.3.x-dev",
+        "typo3/cms-frontend": "14.3.x-dev",
+        "typo3/cms-impexp": "14.3.x-dev",
+        "typo3/cms-info": "14.3.x-dev",
+        "typo3/cms-install": "14.3.x-dev",
+        "typo3/cms-reactions": "14.3.x-dev",
+        "typo3/cms-recycler": "14.3.x-dev",
+        "typo3/cms-rte-ckeditor": "14.3.x-dev",
+        "typo3/cms-seo": "14.3.x-dev",
+        "typo3/cms-setup": "14.3.x-dev",
+        "typo3/cms-sys-note": "14.3.x-dev",
+        "typo3/cms-tstemplate": "14.3.x-dev",
+        "typo3/cms-viewpage": "14.3.x-dev",
+        "typo3/cms-webhooks": "14.3.x-dev",
+        "typo3/theme-camino": "14.3.x-dev"
+    },
+    "require-dev": {
+        "undkonsorten/typo3-auto-login": "^2.3"
     }
 }
