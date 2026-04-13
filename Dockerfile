@@ -5,6 +5,7 @@ ENV TYPO3_CONTEXT=Development \
     WEB_DOCUMENT_INDEX=index.php \
     TYPO3_PATH_APP=/app \
     TYPO3_PATH_ROOT=/app/public \
+    TYPO3_TRUST_ANY_PROXY=0 \
     RESET_DEMO_CRON_SCHEDULE="0 * * * *"
 
 WORKDIR /app

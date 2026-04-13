@@ -2,6 +2,11 @@
 
 use Undkonsorten\TYPO3AutoLogin\Service\AutomaticAuthenticationService;
 
+$trustAnyProxy = filter_var(
+    getenv('TYPO3_TRUST_ANY_PROXY') ?: false,
+    FILTER_VALIDATE_BOOLEAN
+);
+
 if (getenv('IS_DDEV_PROJECT') == 'true') {
     $GLOBALS['TYPO3_CONF_VARS'] = array_replace_recursive(
         $GLOBALS['TYPO3_CONF_VARS'],
@@ -22,6 +27,20 @@ if (getenv('IS_DDEV_PROJECT') == 'true') {
                 'trustedHostsPattern' => '.*.*',
                 'devIPmask' => '*',
                 'displayErrors' => 1,
+            ],
+        ]
+    );
+}
+
+if ($trustAnyProxy) {
+    $GLOBALS['TYPO3_CONF_VARS'] = array_replace_recursive(
+        $GLOBALS['TYPO3_CONF_VARS'],
+        [
+            'SYS' => [
+                'reverseProxyIP' => '*',
+                'reverseProxySSL' => '*',
+                'reverseProxyHeaderMultiValue' => 'first',
+                'trustedHostsPattern' => '.*',
             ],
         ]
     );
