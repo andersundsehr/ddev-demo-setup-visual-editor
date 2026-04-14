@@ -11,8 +11,17 @@ return [
     'DB' => [
         'Connections' => [
             'Default' => [
-                'driver' => 'pdo_sqlite',
-                'path' => dirname(__DIR__, 2) . '/var/sqlite/demo.sqlite',
+                'charset' => 'utf8mb4',
+                'dbname' => 'db',
+                'defaultTableOptions' => [
+                    'charset' => 'utf8mb4',
+                    'collation' => 'utf8mb4_unicode_ci',
+                ],
+                'driver' => 'mysqli',
+                'host' => 'db',
+                'password' => 'db',
+                'port' => 3306,
+                'user' => 'db',
             ],
         ],
     ],
