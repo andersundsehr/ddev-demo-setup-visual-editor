@@ -13,6 +13,7 @@ services:
       retries: 20
     volumes:
       - mysql-data:/var/lib/mysql
+    restart: unless-stopped
 
   web:
     build:
@@ -24,7 +25,7 @@ services:
     environment:
       DATABASE_URL: mysql://demo:demo@mysql:3306/demo
       TYPO3_TRUST_ANY_PROXY: "0"
-      RESET_DEMO_CRON_SCHEDULE: "* * * * *"
+      RESET_DEMO_CRON_SCHEDULE: "0 0 * * *"
     ports:
       - "8081:80"
     restart: unless-stopped
