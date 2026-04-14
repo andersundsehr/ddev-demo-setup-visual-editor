@@ -2,10 +2,26 @@
 
 use Undkonsorten\TYPO3AutoLogin\Service\AutomaticAuthenticationService;
 
+/** @var callable(?string): ?array<string, mixed> $parseDatabaseUrl */
+$parseDatabaseUrl = require dirname(__DIR__, 2) . '/scripts/database-url.php';
+$databaseConfiguration = $parseDatabaseUrl(getenv('DATABASE_URL') ?: null);
 $trustAnyProxy = filter_var(
     getenv('TYPO3_TRUST_ANY_PROXY') ?: false,
     FILTER_VALIDATE_BOOLEAN
 );
+
+if ($databaseConfiguration !== null) {
+    $GLOBALS['TYPO3_CONF_VARS'] = array_replace_recursive(
+        $GLOBALS['TYPO3_CONF_VARS'],
+        [
+            'DB' => [
+                'Connections' => [
+                    'Default' => $databaseConfiguration['typo3Connection'],
+                ],
+            ],
+        ]
+    );
+}
 
 if (getenv('IS_DDEV_PROJECT') == 'true') {
     $GLOBALS['TYPO3_CONF_VARS'] = array_replace_recursive(

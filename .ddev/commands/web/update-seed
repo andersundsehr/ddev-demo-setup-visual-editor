@@ -4,6 +4,7 @@ set -euo pipefail
 cd /var/www/html
 
 rsync -a var/sqlite/demo.sqlite seed/demo.sqlite
+php scripts/export-mysql-seed.php var/sqlite/demo.sqlite seed/demo.mysql.sql.gz
 rsync -a --delete --exclude=_temp_ --exclude=_processed_ public/fileadmin seed/
 
 printf '\n\033[1;36m========================================\033[0m\n'

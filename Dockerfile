@@ -13,7 +13,7 @@ WORKDIR /app
 
 RUN docker-service enable cron \
     && apt-get update \
-    && apt-get install -y --no-install-recommends graphicsmagick imagemagick rsync sqlite3 gzip util-linux unzip \
+    && apt-get install -y --no-install-recommends default-mysql-client graphicsmagick imagemagick rsync sqlite3 gzip util-linux unzip \
     && rm -rf /var/lib/apt/lists/*
 
 COPY composer.json composer.lock /app/
