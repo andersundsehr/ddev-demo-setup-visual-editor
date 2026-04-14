@@ -1,0 +1,15 @@
+#!/bin/bash
+set -euo pipefail
+
+APP_ROOT="${DDEV_APPROOT:-$(pwd)}"
+
+cd "${APP_ROOT}"
+
+mkdir -p seed/fileadmin
+
+ddev export-db --file="${APP_ROOT}/seed/demo.mysql.sql.gz"
+rsync -a --delete --exclude=_temp_ --exclude=_processed_ "${APP_ROOT}/public/fileadmin/" "${APP_ROOT}/seed/fileadmin/"
+
+printf '\n\033[1;36m========================================\033[0m\n'
+printf '\033[1;32m✅ Seed files updated\033[0m\n'
+printf '\033[1;36m========================================\033[0m\n\n'

@@ -8,7 +8,6 @@ return static function (?string $databaseUrl): ?array {
     $databaseUrl = trim($databaseUrl);
     $databaseUrl = preg_replace('#^mysql\+pdo://#', 'mysql://', $databaseUrl) ?? $databaseUrl;
     $databaseUrl = preg_replace('#^pdo[-_]?mysql://#', 'mysql://', $databaseUrl) ?? $databaseUrl;
-    $databaseUrl = preg_replace('#^pdo[-_]?sqlite://#', 'sqlite://', $databaseUrl) ?? $databaseUrl;
 
     $parsedUrl = parse_url($databaseUrl);
     if ($parsedUrl === false || !isset($parsedUrl['scheme'])) {
@@ -16,27 +15,6 @@ return static function (?string $databaseUrl): ?array {
     }
 
     return match ($parsedUrl['scheme']) {
-        'sqlite' => (static function (array $parsedUrl): array {
-            $path = $parsedUrl['path'] ?? '';
-            if ($path === '') {
-                throw new \InvalidArgumentException('DATABASE_URL for SQLite must contain a database path.');
-            }
-
-            if (str_starts_with($path, '//')) {
-                $path = substr($path, 1);
-            }
-
-            $path = urldecode($path);
-
-            return [
-                'scheme' => 'sqlite',
-                'path' => $path,
-                'typo3Connection' => [
-                    'driver' => 'pdo_sqlite',
-                    'path' => $path,
-                ],
-            ];
-        })($parsedUrl),
         'mysql' => (static function (array $parsedUrl): array {
             $host = $parsedUrl['host'] ?? '';
             $databaseName = isset($parsedUrl['path']) ? ltrim($parsedUrl['path'], '/') : '';

@@ -1,16 +1,19 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+# read all envs from /proc/1/environ
+while IFS= read -r -d '' kv; do
+  export "$kv"
+done < /proc/1/environ
+
 APP_ROOT="${APP_ROOT:-/app}"
 APP_USER="${APP_USER:-application}"
 APP_GROUP="${APP_GROUP:-application}"
 RESET_SOURCE="${1:-manual}"
 RESET_DEMO_DB_WAIT_TIMEOUT="${RESET_DEMO_DB_WAIT_TIMEOUT:-60}"
 
-SEED_DB_PATH="${APP_ROOT}/seed/demo.sqlite"
 SEED_MYSQL_DATA_PATH="${APP_ROOT}/seed/demo.mysql.sql.gz"
 SEED_FILEADMIN_PATH="${APP_ROOT}/seed/fileadmin"
-RUNTIME_DB_PATH="${APP_ROOT}/var/sqlite/demo.sqlite"
 RUNTIME_FILEADMIN_PATH="${APP_ROOT}/public/fileadmin"
 LOCK_FILE="/tmp/reset-demo-state.lock"
 TYPO3_BIN="${APP_ROOT}/vendor/bin/typo3"
@@ -35,40 +38,7 @@ parse_database_url() {
     local exports
 
     exports="$(
-        APP_ROOT="$APP_ROOT" DATABASE_URL="${DATABASE_URL:-}" php <<'PHP'
-<?php
-$appRoot = getenv('APP_ROOT') ?: '/app';
-$parseDatabaseUrl = require $appRoot . '/scripts/database-url.php';
-$databaseConfiguration = $parseDatabaseUrl(getenv('DATABASE_URL') ?: null);
-
-if ($databaseConfiguration === null) {
-    $databaseConfiguration = [
-        'scheme' => 'sqlite',
-        'path' => $appRoot . '/var/sqlite/demo.sqlite',
-    ];
-}
-
-$variables = match ($databaseConfiguration['scheme']) {
-    'sqlite' => [
-        'RESET_DATABASE_BACKEND' => 'sqlite',
-        'RESET_DATABASE_PATH' => $databaseConfiguration['path'],
-    ],
-    'mysql' => [
-        'RESET_DATABASE_BACKEND' => 'mysql',
-        'RESET_DATABASE_HOST' => $databaseConfiguration['host'],
-        'RESET_DATABASE_PORT' => (string)$databaseConfiguration['port'],
-        'RESET_DATABASE_NAME' => $databaseConfiguration['dbname'],
-        'RESET_DATABASE_USER' => $databaseConfiguration['user'],
-        'RESET_DATABASE_PASSWORD' => $databaseConfiguration['password'],
-    ],
-    default => throw new RuntimeException(sprintf('Unsupported reset backend "%s"', $databaseConfiguration['scheme'])),
-};
-
-foreach ($variables as $key => $value) {
-    $escapedValue = str_replace("'", "'\"'\"'", (string)$value);
-    echo $key . "='" . $escapedValue . "'" . PHP_EOL;
-}
-PHP
+        php ${APP_ROOT}/scripts/parse-database-url.php ${DATABASE_URL}
     )"
 
     eval "$exports"
@@ -147,19 +117,6 @@ SET FOREIGN_KEY_CHECKS = 1;
 SQL
 }
 
-restore_sqlite_baseline() {
-    require_path "$SEED_DB_PATH"
-
-    log "Verifying PHP SQLite extensions"
-    php -m | grep -qx 'pdo_sqlite'
-    php -m | grep -qx 'sqlite3'
-
-    log "Restoring SQLite baseline"
-    tmp_db="$(mktemp "${APP_ROOT}/var/transient/demo.sqlite.XXXXXX")"
-    cp "$SEED_DB_PATH" "$tmp_db"
-    mv "$tmp_db" "$RUNTIME_DB_PATH"
-}
-
 restore_mysql_baseline() {
     require_path "$SEED_MYSQL_DATA_PATH"
     require_path "$TYPO3_BIN"
@@ -204,23 +161,11 @@ fi
 log "Starting baseline restore"
 
 log "Preparing TYPO3 runtime directories"
-install -d -m 2775 "${APP_ROOT}/var/cache" "${APP_ROOT}/var/log" "${APP_ROOT}/var/sqlite" "${APP_ROOT}/public" "${APP_ROOT}/public/typo3temp"
+install -d -m 2775 "${APP_ROOT}/var/cache" "${APP_ROOT}/var/log" "${APP_ROOT}/public" "${APP_ROOT}/public/typo3temp"
 
 require_path "$SEED_FILEADMIN_PATH"
 parse_database_url
-
-case "$RESET_DATABASE_BACKEND" in
-    sqlite)
-        restore_sqlite_baseline
-        ;;
-    mysql)
-        restore_mysql_baseline
-        ;;
-    *)
-        log "Unsupported database backend: ${RESET_DATABASE_BACKEND}"
-        exit 1
-        ;;
-esac
+restore_mysql_baseline
 
 log "Restoring fileadmin baseline"
 tmp_fileadmin="$(mktemp -d "${APP_ROOT}/var/transient/fileadmin.XXXXXX")"

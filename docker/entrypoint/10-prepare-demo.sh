@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-RESET_DEMO_CRON_SCHEDULE="${RESET_DEMO_CRON_SCHEDULE:-0 * * * *}"
+RESET_DEMO_CRON_SCHEDULE="${RESET_DEMO_CRON_SCHEDULE:-0 0 * * *}"
 CRON_FILE="/etc/cron.d/reset-demo-state"
 CRON_PATH="PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 

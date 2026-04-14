@@ -10,6 +10,8 @@ $trustAnyProxy = filter_var(
     FILTER_VALIDATE_BOOLEAN
 );
 
+$autoLoginUserName = 'editor';
+
 if ($databaseConfiguration !== null) {
     $GLOBALS['TYPO3_CONF_VARS'] = array_replace_recursive(
         $GLOBALS['TYPO3_CONF_VARS'],
@@ -24,6 +26,8 @@ if ($databaseConfiguration !== null) {
 }
 
 if (getenv('IS_DDEV_PROJECT') == 'true') {
+    $autoLoginUserName = 'admin';
+
     $GLOBALS['TYPO3_CONF_VARS'] = array_replace_recursive(
         $GLOBALS['TYPO3_CONF_VARS'],
         [
@@ -63,6 +67,6 @@ if ($trustAnyProxy) {
 }
 
 if (\TYPO3\CMS\Core\Core\Environment::getContext()->isDevelopment()) {
-    putenv(AutomaticAuthenticationService::TYPO3_AUTOLOGIN_USERNAME_ENVVAR . '=admin');
+    putenv(AutomaticAuthenticationService::TYPO3_AUTOLOGIN_USERNAME_ENVVAR . '=' . $autoLoginUserName);
     \Undkonsorten\TYPO3AutoLogin\Utility\RegisterServiceUtility::registerAutomaticAuthenticationService();
 }
