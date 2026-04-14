@@ -3632,7 +3632,7 @@
         },
         {
             "name": "symfony/polyfill-ctype",
-            "version": "v1.34.0",
+            "version": "v1.35.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-ctype.git",
@@ -3691,7 +3691,7 @@
                 "portable"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-ctype/tree/v1.34.0"
+                "source": "https://github.com/symfony/polyfill-ctype/tree/v1.35.0"
             },
             "funding": [
                 {
@@ -3715,7 +3715,7 @@
         },
         {
             "name": "symfony/polyfill-intl-grapheme",
-            "version": "v1.34.0",
+            "version": "v1.35.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-intl-grapheme.git",
@@ -3773,7 +3773,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-intl-grapheme/tree/v1.34.0"
+                "source": "https://github.com/symfony/polyfill-intl-grapheme/tree/v1.35.0"
             },
             "funding": [
                 {
@@ -3797,7 +3797,7 @@
         },
         {
             "name": "symfony/polyfill-intl-idn",
-            "version": "v1.34.0",
+            "version": "v1.35.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-intl-idn.git",
@@ -3860,7 +3860,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-intl-idn/tree/v1.34.0"
+                "source": "https://github.com/symfony/polyfill-intl-idn/tree/v1.35.0"
             },
             "funding": [
                 {
@@ -3884,7 +3884,7 @@
         },
         {
             "name": "symfony/polyfill-intl-normalizer",
-            "version": "v1.34.0",
+            "version": "v1.35.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-intl-normalizer.git",
@@ -3945,7 +3945,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-intl-normalizer/tree/v1.34.0"
+                "source": "https://github.com/symfony/polyfill-intl-normalizer/tree/v1.35.0"
             },
             "funding": [
                 {
@@ -3969,7 +3969,7 @@
         },
         {
             "name": "symfony/polyfill-mbstring",
-            "version": "v1.34.0",
+            "version": "v1.35.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-mbstring.git",
@@ -4030,7 +4030,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-mbstring/tree/v1.34.0"
+                "source": "https://github.com/symfony/polyfill-mbstring/tree/v1.35.0"
             },
             "funding": [
                 {
@@ -4054,7 +4054,7 @@
         },
         {
             "name": "symfony/polyfill-php83",
-            "version": "v1.34.0",
+            "version": "v1.35.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php83.git",
@@ -4110,7 +4110,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-php83/tree/v1.34.0"
+                "source": "https://github.com/symfony/polyfill-php83/tree/v1.35.0"
             },
             "funding": [
                 {
@@ -4134,7 +4134,7 @@
         },
         {
             "name": "symfony/polyfill-uuid",
-            "version": "v1.34.0",
+            "version": "v1.35.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-uuid.git",
@@ -4193,7 +4193,7 @@
                 "uuid"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-uuid/tree/v1.34.0"
+                "source": "https://github.com/symfony/polyfill-uuid/tree/v1.35.0"
             },
             "funding": [
                 {
@@ -5457,12 +5457,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/TYPO3-CMS/backend.git",
-                "reference": "3cb1d0156c27914dfe3668b45f790fffd3c1e722"
+                "reference": "200d89af6245e27237c729a5309a363c4d89d320"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TYPO3-CMS/backend/zipball/3cb1d0156c27914dfe3668b45f790fffd3c1e722",
-                "reference": "3cb1d0156c27914dfe3668b45f790fffd3c1e722",
+                "url": "https://api.github.com/repos/TYPO3-CMS/backend/zipball/200d89af6245e27237c729a5309a363c4d89d320",
+                "reference": "200d89af6245e27237c729a5309a363c4d89d320",
                 "shasum": ""
             },
             "require": {
@@ -5543,7 +5543,7 @@
                     "type": "membership"
                 }
             ],
-            "time": "2026-04-13T11:35:28+00:00"
+            "time": "2026-04-14T10:31:36+00:00"
         },
         {
             "name": "typo3/cms-belog",
@@ -5619,12 +5619,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/TYPO3-CMS/beuser.git",
-                "reference": "442bdd86f0921d1de33742e7653499c36176ca64"
+                "reference": "26f6d237280bf5185eaa52c2017ef6a6446dcff4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TYPO3-CMS/beuser/zipball/442bdd86f0921d1de33742e7653499c36176ca64",
-                "reference": "442bdd86f0921d1de33742e7653499c36176ca64",
+                "url": "https://api.github.com/repos/TYPO3-CMS/beuser/zipball/26f6d237280bf5185eaa52c2017ef6a6446dcff4",
+                "reference": "26f6d237280bf5185eaa52c2017ef6a6446dcff4",
                 "shasum": ""
             },
             "require": {
@@ -5679,7 +5679,7 @@
                     "type": "membership"
                 }
             ],
-            "time": "2026-04-11T06:57:22+00:00"
+            "time": "2026-04-14T08:12:44+00:00"
         },
         {
             "name": "typo3/cms-cli",
@@ -5792,12 +5792,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/TYPO3-CMS/core.git",
-                "reference": "012316a872b074478d9becaa73c870ebee44d584"
+                "reference": "fecba9d663a61d9378bda26a7ff2d55713828e47"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TYPO3-CMS/core/zipball/012316a872b074478d9becaa73c870ebee44d584",
-                "reference": "012316a872b074478d9becaa73c870ebee44d584",
+                "url": "https://api.github.com/repos/TYPO3-CMS/core/zipball/fecba9d663a61d9378bda26a7ff2d55713828e47",
+                "reference": "fecba9d663a61d9378bda26a7ff2d55713828e47",
                 "shasum": ""
             },
             "require": {
@@ -5944,7 +5944,7 @@
                     "type": "membership"
                 }
             ],
-            "time": "2026-04-13T11:30:59+00:00"
+            "time": "2026-04-14T10:17:08+00:00"
         },
         {
             "name": "typo3/cms-dashboard",
@@ -6325,12 +6325,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/TYPO3-CMS/form.git",
-                "reference": "753060bde15d0ed525798255cf171c32b65fcd67"
+                "reference": "c416ca1fbce9d26350849a2bf954cabc6e1a47d3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TYPO3-CMS/form/zipball/753060bde15d0ed525798255cf171c32b65fcd67",
-                "reference": "753060bde15d0ed525798255cf171c32b65fcd67",
+                "url": "https://api.github.com/repos/TYPO3-CMS/form/zipball/c416ca1fbce9d26350849a2bf954cabc6e1a47d3",
+                "reference": "c416ca1fbce9d26350849a2bf954cabc6e1a47d3",
                 "shasum": ""
             },
             "require": {
@@ -6393,7 +6393,7 @@
                     "type": "membership"
                 }
             ],
-            "time": "2026-04-13T11:13:11+00:00"
+            "time": "2026-04-14T10:23:52+00:00"
         },
         {
             "name": "typo3/cms-frontend",
@@ -6401,12 +6401,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/TYPO3-CMS/frontend.git",
-                "reference": "43b0e82d70d062448994063544b5c0f38f8be2eb"
+                "reference": "b836f4884f4f13595c28a6015cceff77c61a4bdf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TYPO3-CMS/frontend/zipball/43b0e82d70d062448994063544b5c0f38f8be2eb",
-                "reference": "43b0e82d70d062448994063544b5c0f38f8be2eb",
+                "url": "https://api.github.com/repos/TYPO3-CMS/frontend/zipball/b836f4884f4f13595c28a6015cceff77c61a4bdf",
+                "reference": "b836f4884f4f13595c28a6015cceff77c61a4bdf",
                 "shasum": ""
             },
             "require": {
@@ -6472,7 +6472,7 @@
                     "type": "membership"
                 }
             ],
-            "time": "2026-04-11T07:51:45+00:00"
+            "time": "2026-04-13T16:24:19+00:00"
         },
         {
             "name": "typo3/cms-impexp",
@@ -6480,12 +6480,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/TYPO3-CMS/impexp.git",
-                "reference": "0cd0c1342b00b360b79fa9cd1d140fbf8da24a4e"
+                "reference": "eff756e055c7dcaae00897e54adf7d320222ef73"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TYPO3-CMS/impexp/zipball/0cd0c1342b00b360b79fa9cd1d140fbf8da24a4e",
-                "reference": "0cd0c1342b00b360b79fa9cd1d140fbf8da24a4e",
+                "url": "https://api.github.com/repos/TYPO3-CMS/impexp/zipball/eff756e055c7dcaae00897e54adf7d320222ef73",
+                "reference": "eff756e055c7dcaae00897e54adf7d320222ef73",
                 "shasum": ""
             },
             "require": {
@@ -6540,7 +6540,7 @@
                     "type": "membership"
                 }
             ],
-            "time": "2026-04-13T11:13:11+00:00"
+            "time": "2026-04-13T15:35:24+00:00"
         },
         {
             "name": "typo3/cms-info",
@@ -6619,12 +6619,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/TYPO3-CMS/install.git",
-                "reference": "2c106bb106037d30cd3162f4b97bc1bd122e977d"
+                "reference": "6d7c0185e5f3cdc9097698287efd960b186266ec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TYPO3-CMS/install/zipball/2c106bb106037d30cd3162f4b97bc1bd122e977d",
-                "reference": "2c106bb106037d30cd3162f4b97bc1bd122e977d",
+                "url": "https://api.github.com/repos/TYPO3-CMS/install/zipball/6d7c0185e5f3cdc9097698287efd960b186266ec",
+                "reference": "6d7c0185e5f3cdc9097698287efd960b186266ec",
                 "shasum": ""
             },
             "require": {
@@ -6689,7 +6689,7 @@
                     "type": "membership"
                 }
             ],
-            "time": "2026-04-13T07:23:51+00:00"
+            "time": "2026-04-14T08:12:44+00:00"
         },
         {
             "name": "typo3/cms-reactions",
@@ -6836,12 +6836,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/TYPO3-CMS/rte_ckeditor.git",
-                "reference": "80a3a19be956abbc00493cd679958224b4fe16a3"
+                "reference": "e6c3689f797abb491e2ae5b94dac2632302cdfbb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TYPO3-CMS/rte_ckeditor/zipball/80a3a19be956abbc00493cd679958224b4fe16a3",
-                "reference": "80a3a19be956abbc00493cd679958224b4fe16a3",
+                "url": "https://api.github.com/repos/TYPO3-CMS/rte_ckeditor/zipball/e6c3689f797abb491e2ae5b94dac2632302cdfbb",
+                "reference": "e6c3689f797abb491e2ae5b94dac2632302cdfbb",
                 "shasum": ""
             },
             "require": {
@@ -6896,7 +6896,7 @@
                     "type": "membership"
                 }
             ],
-            "time": "2026-04-11T10:26:28+00:00"
+            "time": "2026-04-13T16:34:19+00:00"
         },
         {
             "name": "typo3/cms-seo",
