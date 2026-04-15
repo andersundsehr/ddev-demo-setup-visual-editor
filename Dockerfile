@@ -16,16 +16,19 @@ RUN docker-service enable cron \
     && apt-get install -y --no-install-recommends default-mysql-client graphicsmagick imagemagick rsync gzip util-linux unzip \
     && rm -rf /var/lib/apt/lists/*
 
-COPY composer.json composer.lock /app/
+USER application
+
+COPY --chown=application:application composer.json composer.lock /app/
 
 RUN composer install --no-interaction --prefer-dist
 
-COPY . /app
-COPY docker/apache/10-typo3.conf /opt/docker/etc/httpd/vhost.common.d/10-typo3.conf
-COPY docker/entrypoint/10-prepare-demo.sh /opt/docker/provision/entrypoint.d/10-prepare-demo.sh
-COPY docker/php/10-warning-handling.ini /usr/local/etc/php/conf.d/10-warning-handling.ini
-COPY scripts/reset-demo-state.sh /usr/local/bin/reset-demo-state
+COPY --chown=application:application . /app
+COPY --chown=application:application docker/apache/10-typo3.conf /opt/docker/etc/httpd/vhost.common.d/10-typo3.conf
+COPY --chown=application:application docker/entrypoint/10-prepare-demo.sh /opt/docker/provision/entrypoint.d/10-prepare-demo.sh
+COPY --chown=application:application docker/php/10-warning-handling.ini /usr/local/etc/php/conf.d/10-warning-handling.ini
+COPY --chown=application:application scripts/reset-demo-state.sh /usr/local/bin/reset-demo-state
 
 RUN chmod +x /opt/docker/provision/entrypoint.d/10-prepare-demo.sh /usr/local/bin/reset-demo-state \
-    && mkdir -p /app/var/cache /app/var/lock /app/var/log /app/var/transient /app/public/fileadmin /app/public/typo3temp \
-    && chown -R application:application /app
+    && mkdir -p /app/var/cache /app/var/lock /app/var/log /app/var/transient /app/public/fileadmin /app/public/typo3temp
+
+USER root

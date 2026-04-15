@@ -16,13 +16,13 @@
     "require": {
         "php": "~8.5.0",
         "friendsoftypo3/visual-editor": "^1.1.3",
+        "helhum/typo3-console": "^8.3",
         "typo3/cms-backend": "14.3.x-dev",
         "typo3/cms-belog": "14.3.x-dev",
         "typo3/cms-beuser": "14.3.x-dev",
         "typo3/cms-core": "14.3.x-dev",
         "typo3/cms-dashboard": "14.3.x-dev",
         "typo3/cms-extbase": "14.3.x-dev",
-        "typo3/cms-workspaces": "14.3.x-dev",
         "typo3/cms-felogin": "14.3.x-dev",
         "typo3/cms-filelist": "14.3.x-dev",
         "typo3/cms-fluid": "14.3.x-dev",
@@ -40,6 +40,7 @@
         "typo3/cms-tstemplate": "14.3.x-dev",
         "typo3/cms-viewpage": "14.3.x-dev",
         "typo3/cms-webhooks": "14.3.x-dev",
+        "typo3/cms-workspaces": "14.3.x-dev",
         "typo3/theme-camino": "14.3.x-dev"
     },
     "require-dev": {

@@ -148,6 +148,14 @@ restore_mysql_baseline() {
 
     log "Importing MySQL baseline data"
     gzip -dc "$SEED_MYSQL_DATA_PATH" | mysql_command
+
+    log "Check MySQL schema via TYPO3 database:update"
+    (
+        cd "$APP_ROOT"
+        # run the update command twice to ensure that all schema changes are applied, including those that may be introduced by the first update pass
+        php "$TYPO3_BIN" database:update -v '*'
+        php "$TYPO3_BIN" database:update -v '*'
+     )
 }
 
 install -d -m 2775 "${APP_ROOT}/var/lock" "${APP_ROOT}/var/transient"
