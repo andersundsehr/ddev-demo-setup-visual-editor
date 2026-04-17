@@ -53,6 +53,11 @@ return [
         'processor_enabled' => true,
         'processor_path' => '/usr/bin/',
     ],
+    'LANG' => [
+        'availableLocales' => [
+            'de',
+        ],
+    ],
     'LOG' => [
         'TYPO3' => [
             'CMS' => [
@@ -101,7 +106,7 @@ return [
             'frontend.cache.autoTagging' => true,
             'security.system.enforceAllowedFileExtensions' => true,
         ],
-        'sitename' => 'My TYPO3 site',
+        'sitename' => 'Visual Editor Demo',
         'systemMaintainers' => [
             1,
         ],

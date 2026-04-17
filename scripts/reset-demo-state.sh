@@ -127,23 +127,14 @@ restore_mysql_baseline() {
     wait_for_mysql
     drop_mysql_schema_objects
 
-    log "Rebuilding MySQL schema via TYPO3 setup CLI"
+    log "Set MySQL settings via TYPO3 setup CLI"
     (
         cd "$APP_ROOT"
-        php "$TYPO3_BIN" setup \
-            --force \
-            --no-interaction \
-            --driver=pdoMysql \
-            --host="$RESET_DATABASE_HOST" \
-            --port="$RESET_DATABASE_PORT" \
-            --dbname="$RESET_DATABASE_NAME" \
-            --username="$RESET_DATABASE_USER" \
-            --password="$RESET_DATABASE_PASSWORD" \
-            --admin-username=admin \
-            --admin-user-password='DemoAdminPassword1!' \
-            --admin-email=demo@example.invalid \
-            --project-name='Visual Editor Demo' \
-            --server-type=apache
+        php "$TYPO3_BIN" configuration:set DB/Connections/Default/host "$RESET_DATABASE_HOST"
+        php "$TYPO3_BIN" configuration:set DB/Connections/Default/port "$RESET_DATABASE_PORT"
+        php "$TYPO3_BIN" configuration:set DB/Connections/Default/dbname "$RESET_DATABASE_NAME"
+        php "$TYPO3_BIN" configuration:set DB/Connections/Default/user "$RESET_DATABASE_USER"
+        php "$TYPO3_BIN" configuration:set DB/Connections/Default/password "$RESET_DATABASE_PASSWORD"
     )
 
     log "Importing MySQL baseline data"
@@ -155,7 +146,12 @@ restore_mysql_baseline() {
         # run the update command twice to ensure that all schema changes are applied, including those that may be introduced by the first update pass
         php "$TYPO3_BIN" database:update -v '*'
         php "$TYPO3_BIN" database:update -v '*'
-     )
+    )
+    log "Update Langauge packs"
+    (
+        cd "$APP_ROOT"
+        php "$TYPO3_BIN" language:update -v
+    )
 }
 
 install -d -m 2775 "${APP_ROOT}/var/lock" "${APP_ROOT}/var/transient"
