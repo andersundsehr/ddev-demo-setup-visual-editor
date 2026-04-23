@@ -4,7 +4,7 @@ This repository provides a TYPO3 demo for `EXT:visual_editor`. The project is My
 
 ![Screenshot](./screenshot.png)
 
-- Visual Editor project: https://github.com/andersundsehr/visual_editor
+- Visual Editor project: [https://github.com/friendsoftypo3/visual_editor](https://github.com/FriendsOfTYPO3/visual_editor)
 - Standalone image: `ghcr.io/andersundsehr/ddev-demo-setup-visual-editor`
 
 ## DDEV Setup
