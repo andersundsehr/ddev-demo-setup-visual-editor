@@ -725,33 +725,37 @@
         },
         {
             "name": "friendsoftypo3/visual-editor",
-            "version": "1.4.0",
+            "version": "1.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfTYPO3/visual_editor.git",
-                "reference": "e8e5c434bc93771979a33bf9436c71817c8d3e8e"
+                "reference": "abd8e174450022dff926c68b05753634ddbfe66c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfTYPO3/visual_editor/zipball/e8e5c434bc93771979a33bf9436c71817c8d3e8e",
-                "reference": "e8e5c434bc93771979a33bf9436c71817c8d3e8e",
+                "url": "https://api.github.com/repos/FriendsOfTYPO3/visual_editor/zipball/abd8e174450022dff926c68b05753634ddbfe66c",
+                "reference": "abd8e174450022dff926c68b05753634ddbfe66c",
                 "shasum": ""
             },
             "require": {
                 "php": "~8.2.0 || ~8.3.0 || ~8.4.0 || ~8.5.0",
-                "typo3/cms-backend": "^13.4.22 || ^14.2.0 || 14.2.x-dev",
-                "typo3/cms-core": "^13.4.22 || ^14.2.0 || 14.2.x-dev",
-                "typo3/cms-extbase": "^13.4.22 || ^14.2.0 || 14.2.x-dev",
-                "typo3/cms-fluid": "^13.4.22 || ^14.2.0 || 14.2.x-dev",
-                "typo3/cms-frontend": "^13.4.22 || ^14.2.0 || 14.2.x-dev",
-                "typo3/cms-rte-ckeditor": "^13.4.22 || ^14.2.0 || 14.2.x-dev"
+                "typo3/cms-backend": "^13.4.22 || ^14.3.0",
+                "typo3/cms-core": "^13.4.22 || ^14.3.0",
+                "typo3/cms-extbase": "^13.4.22 || ^14.3.0",
+                "typo3/cms-fluid": "^13.4.22 || ^14.3.0",
+                "typo3/cms-frontend": "^13.4.22 || ^14.3.0",
+                "typo3/cms-rte-ckeditor": "^13.4.22 || ^14.3.0"
             },
             "require-dev": {
                 "b13/container": "^3.2.3",
-                "pluswerk/grumphp-config": "^10.2.6",
+                "phpunit/phpunit": "^11.5.55",
+                "pluswerk/grumphp-config": "^10.2.7",
                 "saschaegerer/phpstan-typo3": "^2.1.1 || ^3.0.1",
                 "ssch/typo3-rector": "^3.14.1",
-                "typo3fluid/fluid": "^4.6.0 || 4.6.x-dev || ^5"
+                "typo3/cms-install": "^13.4.0 || ^14.3.0",
+                "typo3/cms-workspaces": "^13.4.0 || ^14.3.0",
+                "typo3/testing-framework": "^9.5.0",
+                "typo3fluid/fluid": "^4.6.0 || ^5.3.1"
             },
             "suggest": {
                 "wapplersystems/multisite-belogin": "You should install this extension, if you have multiple domains in your TYPO3 installation."
@@ -759,7 +763,8 @@
             "type": "typo3-cms-extension",
             "extra": {
                 "typo3/cms": {
-                    "extension-key": "visual_editor"
+                    "extension-key": "visual_editor",
+                    "cms-package-dir": "{$vendor-dir}/typo3/cms"
                 }
             },
             "autoload": {
@@ -785,9 +790,9 @@
             ],
             "support": {
                 "issues": "https://github.com/FriendsOfTYPO3/visual_editor/issues",
-                "source": "https://github.com/FriendsOfTYPO3/visual_editor/tree/1.4.0"
+                "source": "https://github.com/FriendsOfTYPO3/visual_editor/tree/1.4.1"
             },
-            "time": "2026-04-25T06:49:17+00:00"
+            "time": "2026-04-30T12:38:21+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -7421,16 +7426,16 @@
         },
         {
             "name": "typo3/html-sanitizer",
-            "version": "v2.2.0",
+            "version": "v2.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/TYPO3/html-sanitizer.git",
-                "reference": "c672a2e02925de8eed0dcaeb3a3c90d3642049a0"
+                "reference": "988caa31b5fa0dbe17a8331bfa3245898a650d88"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TYPO3/html-sanitizer/zipball/c672a2e02925de8eed0dcaeb3a3c90d3642049a0",
-                "reference": "c672a2e02925de8eed0dcaeb3a3c90d3642049a0",
+                "url": "https://api.github.com/repos/TYPO3/html-sanitizer/zipball/988caa31b5fa0dbe17a8331bfa3245898a650d88",
+                "reference": "988caa31b5fa0dbe17a8331bfa3245898a650d88",
                 "shasum": ""
             },
             "require": {
@@ -7466,9 +7471,9 @@
             "description": "HTML sanitizer aiming to provide XSS-safe markup based on explicitly allowed tags, attributes and values.",
             "support": {
                 "issues": "https://github.com/TYPO3/html-sanitizer/issues",
-                "source": "https://github.com/TYPO3/html-sanitizer/tree/v2.2.0"
+                "source": "https://github.com/TYPO3/html-sanitizer/tree/v2.3.1"
             },
-            "time": "2024-07-12T15:52:25+00:00"
+            "time": "2026-04-30T11:50:45+00:00"
         },
         {
             "name": "typo3/theme-camino",
