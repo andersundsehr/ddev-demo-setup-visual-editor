@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "59e5497b5c807a03b09e6d9224756433",
+    "content-hash": "530a6c2825ef924d06deb5108f4ac32b",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -727,16 +727,16 @@
         },
         {
             "name": "friendsoftypo3/visual-editor",
-            "version": "1.7.1",
+            "version": "1.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfTYPO3/visual_editor.git",
-                "reference": "0a7fd9856b2b247db1e6f521240491eb9af80a40"
+                "reference": "bb0f733b75bdb1f03a073dc478a638cb906e919a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfTYPO3/visual_editor/zipball/0a7fd9856b2b247db1e6f521240491eb9af80a40",
-                "reference": "0a7fd9856b2b247db1e6f521240491eb9af80a40",
+                "url": "https://api.github.com/repos/FriendsOfTYPO3/visual_editor/zipball/bb0f733b75bdb1f03a073dc478a638cb906e919a",
+                "reference": "bb0f733b75bdb1f03a073dc478a638cb906e919a",
                 "shasum": ""
             },
             "require": {
@@ -754,8 +754,8 @@
                 "pluswerk/grumphp-config": "^10.2.7",
                 "saschaegerer/phpstan-typo3": "^2.1.1 || ^3.0.1",
                 "ssch/typo3-rector": "^3.14.1",
-                "typo3/cms-install": "^13.4.28 || ^14.3.2",
-                "typo3/cms-workspaces": "^13.4.28 || ^14.3.2",
+                "typo3/cms-install": "^13.4.28 || ^14.3.3",
+                "typo3/cms-workspaces": "^13.4.28 || ^14.3.3",
                 "typo3/testing-framework": "^9.5.0",
                 "typo3fluid/fluid": "^4.6.1 || ^5.3.1"
             },
@@ -792,9 +792,9 @@
             ],
             "support": {
                 "issues": "https://github.com/FriendsOfTYPO3/visual_editor/issues",
-                "source": "https://github.com/FriendsOfTYPO3/visual_editor/tree/1.7.1"
+                "source": "https://github.com/FriendsOfTYPO3/visual_editor/tree/1.8.0"
             },
-            "time": "2026-06-11T07:48:14+00:00"
+            "time": "2026-06-25T12:08:21+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
