@@ -2,6 +2,10 @@
 
 This repository provides a TYPO3 demo for `EXT:visual_editor`. The project is MySQL-only for both local DDEV development and the standalone Docker setup.
 
+## Hosted Demo
+
+👉 **Open the hosted demo:** [https://demo.andersundsehr.com/typo3/module/web/edit?id=1&viewMode=2&languages%5B0%5D=0&languages%5B1%5D=1](https://demo.andersundsehr.com/typo3/module/web/edit?id=1&viewMode=2&languages%5B0%5D=0&languages%5B1%5D=1)
+
 ![Screenshot](./screenshot.png)
 
 - Visual Editor project: [https://github.com/friendsoftypo3/visual_editor](https://github.com/FriendsOfTYPO3/visual_editor)
