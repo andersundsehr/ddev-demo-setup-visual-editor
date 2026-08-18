@@ -872,16 +872,16 @@
         },
         {
             "name": "friendsoftypo3/visual-editor",
-            "version": "1.10.0",
+            "version": "1.10.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfTYPO3/visual_editor.git",
-                "reference": "c904a271d9aeaa0f0f5ad4883d5628b36cf08bb9"
+                "reference": "ffd56069f577621c40e0d5e5cb149c947d2f69ca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfTYPO3/visual_editor/zipball/c904a271d9aeaa0f0f5ad4883d5628b36cf08bb9",
-                "reference": "c904a271d9aeaa0f0f5ad4883d5628b36cf08bb9",
+                "url": "https://api.github.com/repos/FriendsOfTYPO3/visual_editor/zipball/ffd56069f577621c40e0d5e5cb149c947d2f69ca",
+                "reference": "ffd56069f577621c40e0d5e5cb149c947d2f69ca",
                 "shasum": ""
             },
             "require": {
@@ -937,9 +937,9 @@
             ],
             "support": {
                 "issues": "https://github.com/FriendsOfTYPO3/visual_editor/issues",
-                "source": "https://github.com/FriendsOfTYPO3/visual_editor/tree/1.10.0"
+                "source": "https://github.com/FriendsOfTYPO3/visual_editor/tree/1.10.1"
             },
-            "time": "2026-08-10T10:16:58+00:00"
+            "time": "2026-08-12T13:34:32+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
